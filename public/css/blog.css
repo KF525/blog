@@ -1,10 +1,10 @@
 body {
    font-family: Helvetica, Arial, sans-serif;
-   font-size: 80%;
+   font-size: 90%;
    line-height: 1.5;
 }
 
-h1, h2 {
+h1, h2, h3 {
    font-family: Impact;
    line-height: 0.9;
    text-transform: uppercase;
@@ -21,14 +21,28 @@ h2 {
    font-size: 2em;
 }
 
-a {
-   color: #444;
-   text-decoration: none;
+h3 {
+  font-size: 1.5em;
 }
 
-.nav:a {
-    color: #8aff00;
+body#home a#homenav,
+body#blog a#blognav,
+body#about a#aboutnav {
+  background: #8aff00;
+}
+
+a#homenav,
+a#blognav,
+a#aboutnav {
+    color: #444;
     text-decoration: none;
+    font-weight: normal;
+}
+
+a {
+   color: #444;
+   font-weight: bold;
+   text-decoration: none;
 }
 
 a:hover {
@@ -41,14 +55,44 @@ a:active {
     background: #8aff00;
 }
 
+a.btn {
+   display: inline-block;
+   text-transform: uppercase;
+   background: #8aff00;
+   color: #444;
+   margin: 1em;
+   padding: 1em 2em;
+   -webkit-border-radius: 1em;
+      -moz-border-radius: 1em;
+           border-radius: 1em;
+}
+
+a.btn:hover {
+   background: #444;
+   color: #8aff00;
+   text-decoration: none;
+}
+
 blockquote {
    margin: 0;
    padding: 3em;
    background: #444;
    font-family: georgia;
-   font-size: 1.5em;
+   font-size: 1.25em;
    text-align: center;
    color: white;
+}
+
+img {
+   background: #e9e9e9;
+   margin-top: 1.5em;
+   width: 100%;
+}
+
+.caption {
+  font-size: .75em;
+  color: #8aff00;
+  margin-bottom: 1.5em;
 }
 
 .nav {

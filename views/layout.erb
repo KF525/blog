@@ -1,7 +1,11 @@
-<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+<head>
+  <link rel="stylesheet" href="/css/blog.css" type="text/css" />
+  <script src="/js/blog.js"></script>
+</head>
 
 <div class="nav">
-  <a href="/">HOME</a>&nbsp;&nbsp;&nbsp;<a href="/posts/post1">BLOG</a>&nbsp;&nbsp;&nbsp;<a href="/aboutme">ME</a></div>
+  <a href="/" id="homenav">HOME</a>&nbsp;&nbsp;&nbsp;<a href="/posts/2014-09-24/post1" id="blognav">BLOG</a>&nbsp;&nbsp;&nbsp;<a href="/aboutme" id="aboutnav">ME</a>
+</div>
 <hr>
 
   <%= yield %>

@@ -1,8 +1,11 @@
+#this is called application file/class
 require 'sinatra'
+require './lib/post' #need to require files being referenced/require always for ruby file
 
 class MyBlog < Sinatra::Base
 
   get "/" do
+    @posts = Post.all
     erb :index
   end
 
@@ -10,8 +13,9 @@ class MyBlog < Sinatra::Base
     erb :aboutme
   end
 
-  get "/posts/:post" do
+  get "/posts/:date/:post" do
     post = params[:post]
-    erb :"/posts/#{post}"
+    date = params[:date]
+    erb :"/posts/#{date}/#{post}"
   end
 end
