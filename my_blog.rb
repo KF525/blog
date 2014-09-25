@@ -10,7 +10,8 @@ class MyBlog < Sinatra::Base
     erb :aboutme
   end
 
-  get "/posts/:post_name" do
-    params.inspect
+  get "/posts/:post" do
+    post = params[:post]
+    erb :"/posts/#{post}"
   end
 end
