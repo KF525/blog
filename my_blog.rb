@@ -5,7 +5,7 @@ require './lib/post' #need to require files being referenced/require always for 
 class MyBlog < Sinatra::Base
 
   get "/" do
-    @posts = Post.all
+    @posts = Post.most_recent
     erb :index
   end
 

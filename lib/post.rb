@@ -16,15 +16,29 @@ class Post
     end
   end
 
-  def parse_date #do a loop and update the dates??
-    Date.parse(@date)
+  def self.parse_date
+    all.each do |post|
+      post.date = Date.parse(post.date)
+    end
   end
 
-  def sort_date
-    #sort_by date
+  def self.sort_date
+    parse_date.sort_by { |x| x.date }
   end
 
-  def most_recent(posts)
-    #push the first five results to homepage
+  def self.most_recent
+    recent_posts = []
+    all_posts = []
+
+    all_posts<<sort_date
+
+
+    all_posts.flatten.reverse_each do |blog|
+      if recent_posts.count == 5 then
+        break
+      end
+      recent_posts<<blog
+    end
+    recent_posts
   end
 end
