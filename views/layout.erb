@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="/css/blog.css" type="text/css" />
 
-<div id="navigation"><a href="/aboutme">About Me</a> <a href="/posts/post1">Post</a> Test
-<hr></div>
-
+<div class="nav">
+  <a href="/">HOME</a>&nbsp;&nbsp;&nbsp;<a href="/posts/post1">BLOG</a>&nbsp;&nbsp;&nbsp;<a href="/aboutme">ME</a></div>
+<hr>
 
   <%= yield %>
 
-<hr>
-<%= " test " * 4 %>
+<div class="footer">
+  <hr><%=DateTime.now.strftime("%B, %-d, %Y")%>&nbsp;&nbsp;&nbsp;&nbsp;Built with the help of <a href="http://adadevelopersacademy.org/" target="blank">ADA</a>
+</div>

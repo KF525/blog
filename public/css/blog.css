@@ -1,7 +1,66 @@
-h1 {
-  color:orange
+body {
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 80%;
+   line-height: 1.5;
 }
 
-#navigation {
-  color:green
+h1, h2 {
+   font-family: Impact;
+   line-height: 0.9;
+   text-transform: uppercase;
+   text-align: left;
+   color: #444;
+}
+
+h1 {
+   font-size: 6em;
+   margin: 0;
+}
+
+h2 {
+   font-size: 2em;
+}
+
+a {
+   color: #444;
+   text-decoration: none;
+}
+
+.nav:a {
+    color: #8aff00;
+    text-decoration: none;
+}
+
+a:hover {
+   color: #444;
+   text-decoration: none;
+   border-bottom: .5em solid #8aff00;
+}
+
+a:active {
+    background: #8aff00;
+}
+
+blockquote {
+   margin: 0;
+   padding: 3em;
+   background: #444;
+   font-family: georgia;
+   font-size: 1.5em;
+   text-align: center;
+   color: white;
+}
+
+.nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 1em 3em 10px 0.5em;
+}
+
+.footer {
+    text-align: right;
+    font-size: .75em;
+    color: #444;
+    margin: 10em 3em 1em 0.5em;
 }
