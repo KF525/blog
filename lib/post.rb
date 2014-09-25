@@ -1,25 +1,25 @@
-class Post
-  #access posts, files within views/posts
-  #post has title, url, filename, content
+#access posts, files within views/posts
+#post has title, url, filename, content
 
-  #read my list of post files
-  #create an array of post objects with attributes set
-  #post.all
+#read my list of post files
+#create an array of post objects with attributes set
+#post.all
+
+class Post
+  attr_accessor :title, :url
+
   def initialize(file_array)
-    # @filename = file_array[]
-    # @url = file_array[]
-    # @title = file_array[]
+    @title = file_array[-1].split(".")[0] #you can use regular expressions too for this.
+    @url = "/posts/#{title}"
   end
 
   def self.all
     Dir.glob("views/posts/*.erb").collect do |filepath|
-      a = filepath.split("/")[2]
+      a = filepath.split("/")
       new(a)
     end
   end
-
 end
-
 
 
 #
