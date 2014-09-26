@@ -1,13 +1,18 @@
 require 'Date'
 
 class Post
-  attr_accessor :title, :url, :date
+  attr_accessor :title, :url, :date, :id
 
   def initialize(file_array)
     @title = file_array[-1].split(".")[0]
     @date = file_array[2]
     @url = "/posts/#{@date}/#{@title}"
+    @id = nil
   end
+
+  # def self.all
+  #   @all ||= all_create
+  # end
 
   def self.all
     Dir.glob("views/posts/**/*.erb").collect do |filepath|
@@ -41,9 +46,21 @@ class Post
     recent_posts
   end
 
-  def self.blog_content
-    all.each do |file|
-      File.open(file.url, "r")
+  def self.new_title
+    all.collect do |post|
+      if post.title.include?("_")
+        post.title = post.title.gsub!("_", " ")
+      else
+        post.title
+      end
     end
+  end
+
+  def self.unique_ids
+    n = 0
+     all.collect do |post|
+      post.id = n + 1
+      n = post.id
+     end
   end
 end
