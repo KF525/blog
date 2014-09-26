@@ -4,7 +4,7 @@ class Post
   attr_accessor :title, :url, :date, :id
 
   def initialize(file_array)
-    @title = file_array[-1].split(".")[0].gsub!("_", " ")
+    @title = file_array[-1].split(".")[0]
     @date = file_array[2]
     @url = "/posts/#{@date}/#{@title}"
     @id = nil
@@ -24,6 +24,7 @@ class Post
   def self.parse_date
     all.each do |post|
       post.date = Date.parse(post.date)
+      post.title = post.title.gsub!("_", " ")
     end
   end
 
@@ -47,7 +48,7 @@ class Post
   end
 
   def post_excerpt
-    
+
   end
   #
   # def self.unique_ids
