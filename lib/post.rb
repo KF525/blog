@@ -26,19 +26,24 @@ class Post
     parse_date.sort_by { |x| x.date }
   end
 
-  def self.most_recent
+  def self.most_recent(n)
     recent_posts = []
     all_posts = []
 
     all_posts<<sort_date
 
-
-    all_posts.flatten.reverse_each do |blog|
-      if recent_posts.count == 5 then
+    all_posts.flatten.reverse_each do |post|
+      if recent_posts.count == n then
         break
       end
-      recent_posts<<blog
+      recent_posts<<post
     end
     recent_posts
+  end
+
+  def self.blog_content
+    all.each do |file|
+      File.open(file.url, "r")
+    end
   end
 end

@@ -5,7 +5,7 @@ require './lib/post' #need to require files being referenced/require always for 
 class MyBlog < Sinatra::Base
 
   get "/" do
-    @posts = Post.most_recent
+    @posts = Post.most_recent(5)
     erb :index
   end
 
@@ -16,6 +16,6 @@ class MyBlog < Sinatra::Base
   get "/posts/:date/:post" do
     post = params[:post]
     date = params[:date]
-    erb :"/posts/#{date}/#{post}"
+    erb :"/posts/#{date}/#{post}", :layout => :blog_layout
   end
 end
