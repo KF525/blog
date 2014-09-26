@@ -46,15 +46,9 @@ class Post
     recent_posts
   end
 
-  # def self.new_title
-  #   all.collect do |post|
-  #     if post.title.include?("_")
-  #       post.title = post.title.gsub!("_", " ")
-  #     else
-  #       post.title
-  #     end
-  #   end
-  # end
+  def post_excerpt
+    
+  end
   #
   # def self.unique_ids
   #   n = 0
