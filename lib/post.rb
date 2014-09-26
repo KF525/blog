@@ -1,4 +1,4 @@
-require 'Date'
+require 'date'
 
 class Post
   attr_accessor :title, :url, :date, :id
