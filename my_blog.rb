@@ -14,8 +14,6 @@ class MyBlog < Sinatra::Base
   end
 
   get "/posts/:date/:post" do
-    post = params[:post]
-    date = params[:date]
-    erb :"/posts/#{date}/#{post}", :layout => :blog_layout
+    erb :"/posts/#{params[:date]}/#{params[:post]}", :layout => :blog_layout
   end
 end

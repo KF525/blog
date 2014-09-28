@@ -1,17 +1,13 @@
 require 'date'
 
 class Post
-  attr_accessor :title, :url, :date, :id
+  attr_accessor :title, :url, :date, :id, :excerpt
 
   def initialize(file_array)
     @title = file_array[-1].split(".")[0]
     @date = file_array[2]
     @url = "/posts/#{@date}/#{@title}"
-    @id = nil
-  end
-
-  def self.all
-    @all ||= all_create
+    @excerpt = nil
   end
 
   def self.all
@@ -21,15 +17,18 @@ class Post
     end
   end
 
-  def self.parse_date
+  def self.update_attributes
     all.each do |post|
+      file_content = open("views#{post.url}.erb").read
+      line = /"post_excerpt"/ =~ file_content
       post.date = Date.parse(post.date)
       post.title = post.title.gsub!("_", " ")
+      post.excerpt = file_content[(line.to_i + 15), 125]
     end
   end
 
   def self.sort_date
-    parse_date.sort_by { |x| x.date }
+    update_attributes.sort_by { |x| x.date }
   end
 
   def self.most_recent(n)
@@ -46,16 +45,13 @@ class Post
     end
     recent_posts
   end
-
-  def post_excerpt
-
-  end
-  #
-  # def self.unique_ids
-  #   n = 0
-  #    all.collect do |post|
-  #     post.id = n + 1
-  #     n = post.id
-  #    end
-  # end
 end
+
+  # def self.post_excerpt
+  #   Post.all.collect do |post|
+  #
+  #     #puts file_content[(line.to_i)]
+  #     post.excerpt = file_content[(line.to_i + 15), 150]
+  #     puts post.excerpt.inspect
+  #   end
+  # end

@@ -15,15 +15,15 @@
       And full of natural highs that come from when the stuff I type
       doesn't break my computer.</h2>
 
-    <div><img src="/images/computer.png" alt="computer"></div>
+    <div><img src="/images/black_laptop.png" alt="computer"></div>
 
 
     <section class="blog_list">
       <h4>Recent Posts:</h4>
       <% @posts.each do |post| %>
-      <a href="<%= post.url %>"><%= post.title %></a><br/>
-    <% end %>
-      <!-- View more posts option?-->
+        <a href="<%= post.url %>"><%= post.title%></a><br/>
+        <%= post.excerpt %>... <a href="<%= post.url %>">More</a><br/><br/>
+      <% end %>
     </section>
 
 </body>
