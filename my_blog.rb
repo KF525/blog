@@ -1,6 +1,7 @@
 #this is called application file/class
 require 'sinatra'
-require './lib/post' #need to require files being referenced/require always for ruby file
+#need to require files being referenced/require always for ruby file
+require './lib/post'
 
 class MyBlog < Sinatra::Base
 

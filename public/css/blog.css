@@ -4,19 +4,6 @@
    box-sizing: border-box;
 }
 
-/* Add the "group" class to a container element to contain it's floats (without needing to specify a fixed height). See: http://nicolasgallagher.com/micro-clearfix-hack. If you need a quick refresher on working with floats I recommend reading: http://css-tricks.com/all-about-floats. */
-.group:before,
-.group:after {
-   content:"";
-   display:table;
-}
-.group:after {
-   clear:both;
-}
-.group {
-   zoom:1; /* For IE 6/7 (trigger hasLayout) */
-}
-
 /* CSS BEGINS HERE */
 
 body {
@@ -25,7 +12,7 @@ body {
    line-height: 1.5;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
    font-family: Impact;
    line-height: 0.9;
    text-transform: uppercase;
@@ -50,6 +37,10 @@ h4 {
   font-size: 2em;
   color: #8aff00;
   margin: 0;
+}
+
+h5 {
+  font-size: 1em;
 }
 
 body#home a#homenav,
@@ -102,7 +93,7 @@ a.btn:hover {
 
 .blog_list {
   position: relative;
-  font-size: 125%;
+  font-size: 100%;
   margin: 1em 0 0 1em;
 }
 
@@ -165,20 +156,7 @@ div img {
 }
 
 /* MEDIA QUERIES BEGIN HERE*/
-@media screen and (min-width: 500px) {
-  .blog_list {
-      font-size: 100%;
-      margin: 1em 0 0 25em;
-  }
-
-  div img {
-    position: relative;
-    width: 200px;
-    margin: .5em 2em 4em 4em;
-  }
-}
-
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 490px) {
   .blog_list {
       font-size: 100%;
       margin: 1em 0 0 25em;

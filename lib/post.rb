@@ -4,7 +4,7 @@ class Post
   attr_accessor :title, :url, :date, :id, :excerpt
 
   def initialize(file_array)
-    @title = file_array[-1].split(".")[0]
+    @title = file_array[-1].split(".").first
     @date = file_array[2]
     @url = "/posts/#{@date}/#{@title}"
     @excerpt = nil
@@ -21,6 +21,7 @@ class Post
     all.each do |post|
       file_content = open("views#{post.url}.erb").read
       line = /"post_excerpt"/ =~ file_content
+
       post.date = Date.parse(post.date)
       post.title = post.title.gsub!("_", " ")
       post.excerpt = file_content[(line.to_i + 15), 125]
@@ -46,12 +47,3 @@ class Post
     recent_posts
   end
 end
-
-  # def self.post_excerpt
-  #   Post.all.collect do |post|
-  #
-  #     #puts file_content[(line.to_i)]
-  #     post.excerpt = file_content[(line.to_i + 15), 150]
-  #     puts post.excerpt.inspect
-  #   end
-  # end
