@@ -6,15 +6,25 @@ require './lib/post'
 class MyBlog < Sinatra::Base
 
   get "/" do
+    @current_page = :home
     @posts = Post.most_recent(5)
     erb :index
   end
 
   get "/aboutme" do
+    @current_page = :about
     erb :aboutme
   end
 
+  get "/bloglanding" do
+    @current_page = :blog
+    erb :bloglanding
+  end
+
   get "/posts/:date/:post" do
-    erb :"/posts/#{params[:date]}/#{params[:post]}", :layout => :blog_layout
+    @current_page = :blog
+    erb :blog_layout, :layout => :layout do
+      erb :"/posts/#{params[:date]}/#{params[:post]}"
+    end
   end
 end

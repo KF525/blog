@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/blog.css" type="text/css" />
-  <script src="/js/blog.js"></script>
-  <title>Kate Fulton's Blog</title>
-</head>
-
-<section class="nav">
-  <a href="/" id="homenav">HOME</a>&nbsp;&nbsp;&nbsp;<a href="/posts/2014-09-29/technology_is_magic" id="blognav">BLOG</a>&nbsp;&nbsp;&nbsp;<a href="/aboutme" id="aboutnav">ME</a>
-</section>
-<hr>
-
-  <%= yield %>
 
 
-<section class="byline"><a href="/aboutme">Kate Fulton</a></section>
-<section class="lastnextblog"><a href="">Last Post</a> | <a href="">Next Post</a></section>
-<section class="footer">
-  <hr><%=DateTime.now.strftime("%B, %-d, %Y")%>&nbsp;&nbsp;&nbsp;&nbsp;Built with the power of <a href="http://adadevelopersacademy.org/" target="blank">ADA</a>
-</section>
-</html>
+<%=yield%>
+
+<ul class="horizontal-list blog_footer">
+  <li class="byline">by <a href="/aboutme">Kate Fulton</a></li>
+  <li class="lastnextblog"><a href="">Last Post</a> | <a href="">Next Post</a></li>
+</ul>
