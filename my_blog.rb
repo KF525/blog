@@ -18,6 +18,8 @@ class MyBlog < Sinatra::Base
 
   get "/bloglanding" do
     @current_page = :blog
+    @all_posts = Post.all.size
+    @posts = Post.most_recent(@all_posts)
     erb :bloglanding
   end
 

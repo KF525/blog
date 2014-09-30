@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/blog.css" type="text/css" />
+    <script src="/js/blog.js"></script>
+    <title>Kate's Ada Blog</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav horizontal-list">
+          <li><a href="/" class="homenav <%="selected" if @current_page == :home %>">HOME</a></li>
+          <li><a href="/bloglanding" class="blognav <%="selected" if @current_page == :blog %>">BLOG</a></li>
+          <li><a href="/aboutme" class="aboutnav <%="selected" if @current_page == :about %>">ME</a></li>
+        </ul>
+      </nav>
+      <hr>
+    </header>
+
+      <%= yield %>
+
+    <footer class="footer">
+      <hr>
+      <ul class="horizontal-list">
+        <li><%=DateTime.now.strftime("%B, %-d, %Y")%></li>
+        <li>Built with the power of
+          <a href="http://adadevelopersacademy.org/" target="blank">ADA</a></li>
+    </footer>
+  </body>
+</html>
