@@ -46,4 +46,15 @@ class Post
     end
     recent_posts
   end
+
+  def find_current_index
+  end
+
+  def next_blog(n)
+    Post.sort_date[n+1].url
+  end
+
+  def last_blog(n)
+    Post.sort_date[n-1].url
+  end
 end

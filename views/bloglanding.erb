@@ -5,4 +5,11 @@
     This is where I can have the pagination (rather than on the homepage).
   Ideally also a search function to find certain posts.</p>
 </section>
+<section class="blog_list">
+    <hgroup><h3>Recent Posts</h3></hgroup>
+    <% @posts.each do |post| %>
+      <a href="<%= post.url %>"><%= post.title%></a><br/>
+      <%= post.excerpt %>... <a href="<%= post.url %>">More</a><br/><br/>
+    <% end %>
+</section>
 </body>
