@@ -17,6 +17,10 @@ class Post
     end
   end
 
+  def instance_method(post)
+    puts post.url
+  end
+    
   def self.update_attributes
     all.each do |post|
       file_content = open("views#{post.url}.erb").read
@@ -47,14 +51,15 @@ class Post
     recent_posts
   end
 
-  def find_current_index
+  def self.find_current_index(an_url)
+    Post.sort_date.index { |post| post.url == an_url }
   end
 
-  def next_blog(n)
-    Post.sort_date[n+1].url
+  def self.next_blog
+    Post.sort_date[ (find_current_index(an_url)) + 1 ].url
   end
 
-  def last_blog(n)
-    Post.sort_date[n-1].url
+  def self.last_blog
+    Post.sort_date[ (find_current_index(an_url)) - 1 ].url
   end
 end

@@ -4,5 +4,6 @@
 
 <ul class="horizontal-list blog_footer">
   <li class="byline">by <a href="/aboutme">Kate Fulton</a></li>
-  <li class="lastnextblog"><a href="">Last Post</a> | <a href="">Next Post</a></li>
+  <li class="lastnextblog"><a href="<%= Post.sort_date[@current_index - 1].url if @current_index > 0 %>">Last Post</a> |
+    <a href="<%= Post.sort_date[@current_index + 1].url if @current_index <= (Post.all.length) %>">Next Post</a></li>
 </ul>

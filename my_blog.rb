@@ -24,6 +24,7 @@ class MyBlog < Sinatra::Base
   end
 
   get "/posts/:date/:post" do
+    @current_index = Post.find_current_index("/posts/#{params[:date]}/#{params[:post]}")
     @current_page = :blog
     erb :blog_layout, :layout => :layout do
       erb :"/posts/#{params[:date]}/#{params[:post]}"
