@@ -17,23 +17,23 @@ class Post
     end
   end
 
-  def instance_method(post)
-    puts post.url
-  end
-    
-  def self.update_attributes
-    all.each do |post|
-      file_content = open("views#{post.url}.erb").read
-      line = /"post_excerpt"/ =~ file_content
+  def update_post
+    file_content = open("views#{self.url}.erb").read
+    line = /"post_excerpt"/ =~ file_content
 
-      post.date = Date.parse(post.date)
-      post.title = post.title.gsub!("_", " ")
-      post.excerpt = file_content[(line.to_i + 15), 125]
+    self.date = Date.parse(self.date)
+    self.title = self.title.gsub!("_", " ")
+    self.excerpt = file_content[(line.to_i + 15), 125]
+  end
+
+  def self.update_posts
+    all.each do |post|
+      post.update_post
     end
   end
 
   def self.sort_date
-    update_attributes.sort_by { |x| x.date }
+    update_posts.sort_by { |x| x.date }
   end
 
   def self.most_recent(n)
@@ -52,14 +52,18 @@ class Post
   end
 
   def self.find_current_index(an_url)
-    Post.sort_date.index { |post| post.url == an_url }
+    @current_index = sort_date.index { |post| post.url == an_url }
   end
 
   def self.next_blog
-    Post.sort_date[ (find_current_index(an_url)) + 1 ].url
+    if @current_index < Post.all.length - 1
+      sort_date[ (@current_index + 1) ].url
+    end
   end
 
   def self.last_blog
-    Post.sort_date[ (find_current_index(an_url)) - 1 ].url
+    if @current_index > 0
+      sort_date[ (@current_index - 1) ].url
+    end
   end
 end
