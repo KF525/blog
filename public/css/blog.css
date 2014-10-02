@@ -173,7 +173,7 @@ section img {
 }
 
 .full_table {
-  width: 80%;
+  width: 90%;
   margin: 2em auto 3em auto;
 }
 
@@ -184,9 +184,10 @@ section img {
 }
 
 td {
-  padding: 2em 2em 2em 2em;
+  padding: 1em 1em 1em 1em;
   border: 1px solid #ffffff;
-  font-size: 1em;
+  font-size: .85em;
+  line-height: 1.3em;
 }
 
 .table {
@@ -239,5 +240,12 @@ td {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  td {
+    padding: 1em 1em 1em 1em;
+    border: 1px solid #ffffff;
+    font-size: 1em;
+    line-height: 1.3em;
   }
 }
