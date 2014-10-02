@@ -1,8 +1,8 @@
 body {
-   font-family: Helvetica, Arial, sans-serif;
-   line-height: 1.5em;
-   font-size: 100%;
-   margin: .25em 1em;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  font-size: 100%;
+  margin: .25em 1em;
 }
 
 section {
@@ -13,16 +13,16 @@ section {
 }
 
 h1, h2, h3, h4, h5 {
-   font-family: Impact, "Oswald";
-   line-height: 1em;
-   text-transform: uppercase;
-   text-align: left;
-   color: #444;
+  font-family: Impact, "Oswald";
+  line-height: 1em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #444;
 }
 
 h1 {
-   font-size: 3em;
-   margin: 0;
+  font-size: 3em;
+  margin: 0;
 }
 
 h2 {
@@ -48,9 +48,9 @@ h4 {
 .homenav,
 .blognav,
 .aboutnav {
-    color: #444;
-    text-decoration: none;
-    font-weight: normal;
+  color: #444;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 a {
@@ -66,7 +66,7 @@ a:hover {
 }
 
 a:active {
-    background: #8aff00;
+  background: #8aff00;
 }
 
 .nav {
@@ -87,10 +87,10 @@ a:active {
 }
 
 .footer {
-    text-align: right;
-    font-size: .5em;
-    color: #444;
-    margin: 5em 0 0 0;
+  text-align: right;
+  font-size: .5em;
+  color: #444;
+  margin: 5em 0 0 0;
 }
 
 .blog_list {
@@ -105,14 +105,16 @@ a:active {
   position: relative;
 }
 
+/* CSS for blog entries begins here */
+
 blockquote {
-   margin: 1em 0;
-   padding: 3em;
-   background: #444;
-   font-family: georgia;
-   font-size: 1.25em;
-   text-align: center;
-   color: white;
+  margin: 1em 0;
+  padding: 3em;
+  background: #444;
+  font-family: georgia;
+  font-size: 1.25em;
+  text-align: center;
+  color: white;
 }
 
 blockquote footer {
@@ -130,10 +132,10 @@ blockquote footer {
 }
 
 section img {
-   background: #e9e9e9;
-   margin-top: 1.5em;
-   margin-bottom: 1.5em;
-   width: 100%;
+  background: #e9e9e9;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 100%;
 }
 
 .caption {
@@ -162,6 +164,8 @@ section img {
   float: right;
 }
 
+  /*Treatment for inactive Last/Next in Blog section*/
+
 .disabled {
   pointer-events: none;
   cursor: default;
@@ -178,6 +182,17 @@ section img {
   margin: 2em auto 3em auto;
 }
 
+.table {
+  background-color: #444;
+  color: white;
+  width:100%;
+}
+
+.table-toggle {
+  font-weight: bold;
+  text-align: right;
+}
+
 .table-header {
   color: #8aff00;
   text-transform: uppercase;
@@ -191,29 +206,9 @@ td {
   line-height: 1.3em;
 }
 
-.table {
-  background-color: #444;
-  color: white;
-  width:100%;
-}
-
-.table-toggle {
-  font-weight: bold;
-  text-align: right;
-}
-
 .hide {
   display:none;
 }
-
-/*.btn {
-   display: inline-block;
-   text-transform: uppercase;
-   background: #ffffff;
-   color: #444;
-   margin: 1em;
-   padding: 1em 2em;
-}*/
 
 /* MEDIA QUERIES BEGIN HERE*/
 
