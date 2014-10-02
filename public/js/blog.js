@@ -18,12 +18,9 @@ $(document).ready(function() {
     $(this).find('img').toggle();
   });
 
-  $(document).keypress(function(event) {
-
-     var keycode = (event.keyCode ? event.keyCode : event.which);
-
-     if(keycode == 38, 38, 40, 40, 37, 39, 37, 39, 65, 66){
-       alert("Hello");
-     }
-   });
+  $(document).keydown(function(e) {
+    if(e.which == 67 && e.ctrlKey) {
+        alert("Can't stop. Won't stop.");
+    }
+  });
 });
