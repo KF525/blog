@@ -66,4 +66,11 @@ class Post
       sort_date[ (@current_index - 1) ].url
     end
   end
+
+  def self.search(search_term)
+    all.find_all {|post| open("views/#{post.url}.erb").read.include?(search_term)}
+
+    # @search_posts = Post.search(@search_term)
+    # search_term = to input
+  end
 end

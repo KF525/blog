@@ -17,6 +17,7 @@ class MyBlog < Sinatra::Base
   end
 
   get "/favoritethings" do
+    @current_page = :about
     erb :favoritethings
   end
 

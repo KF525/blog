@@ -94,7 +94,7 @@ a:active {
   margin: 5em 0 0 0;
 }
 
-.blog_list {
+.blog-list {
   position: relative;
   margin: 1em 0 0 1em;
 }
@@ -104,6 +104,56 @@ a:active {
   margin: 0 0 3em 8em;
   width: 175px;
   position: relative;
+}
+
+/* CSS for about me begins here */
+
+.about-section {
+  float: left;
+  width: 60%;
+  margin: 2em 1em;
+}
+
+.about-image {
+  width: 30%;
+  float: left;
+}
+
+.footer {
+  clear: both;
+}
+
+/*CSS for blog landing page begins here*/
+
+.blog-landing-image {
+  width: 100%;
+}
+
+.search {
+  font-family: Impact, "Oswald";
+  font-size: .85em;
+  color: #444;
+  margin-left: .5em;
+  margin-top: 2em;
+}
+
+.btn {
+   display: inline-block;
+   text-transform: uppercase;
+   font-size: .75em;
+   background: #8aff00;
+   color: #444;
+   margin: .5em;
+   padding: .5em .5em;
+   border: none;
+   -webkit-border-radius: 2em;
+      -moz-border-radius: 2em;
+           border-radius: 2em;
+}
+
+.btn:hover {
+   background: #444;
+   color: #ffffff;
 }
 
 
@@ -239,7 +289,7 @@ td {
     height: 100%;
   }
 
-  .blog_list {
+  .blog-list {
     width: 300px;
   }
 
@@ -263,5 +313,15 @@ td {
     border: 1px solid #ffffff;
     font-size: 1em;
     line-height: 1.3em;
+  }
+
+  .blog-landing-image {
+    width: 50%;
+    float: left;
+  }
+
+  .blog-landing-list {
+    width: 45%;
+    float: left;
   }
 }
