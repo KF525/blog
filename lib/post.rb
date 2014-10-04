@@ -68,8 +68,13 @@ class Post
   end
 
   def self.search(search_term)
-    all.find_all {|post| open("views/#{post.url}.erb").read.include?(search_term)}
+    search = all.find_all {|post| open("views/#{post.url}.erb").read.include?(search_term)}
 
+    if search.length == 0
+      "No matches. Sorry!" # no search results
+    else
+      #list matches
+    end
     # @search_posts = Post.search(@search_term)
     # search_term = to input
   end

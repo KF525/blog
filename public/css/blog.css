@@ -133,8 +133,9 @@ a:active {
   font-family: Impact, "Oswald";
   font-size: .85em;
   color: #444;
-  margin-left: .5em;
+  margin-left: .4em;
   margin-top: 2em;
+  line-height: .6em;
 }
 
 .btn {
@@ -143,7 +144,7 @@ a:active {
    font-size: .75em;
    background: #8aff00;
    color: #444;
-   margin: .5em;
+   margin: .7em;
    padding: .5em .5em;
    border: none;
    -webkit-border-radius: 2em;
