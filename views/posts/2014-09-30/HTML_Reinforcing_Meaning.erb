@@ -1,44 +1,123 @@
   <article>
     <hgroup>
-      <h2>HTML: Reinforcing Meaning</h2>
+      <h2>HTML: Reinforcing Meaning, One Box at a Time</h2>
     </hgroup>
       <section id="post_excerpt">
-          Today we started to delve into HTML (Hypertext Markup Language). HTML's
-          primary role is providing structure and meaning to your website. Each tag
-          should be carefully considered and smartly describe the content that is
-          contained within.</p>
+          HTML (Hypertext Markup Language) has one primary objective: to provide
+          structure and meaning to your website. The basic structure of an HTML
+          document includes tags that bookcase the content on the page:
+          (&lt;tag>web content&lt;/tag>). An open and closing tag that contains
+          content is a web element. There are a wide range of tags, refering to
+          different aspects of a document (paragraph tags, blockquote tags,
+          orered list tags...). The goal is to choose tags smartly so that
+          the tag type accurately describes the content they contain.
       </section>
 
       <section>
-        <h4>Div + Span Tags</h4>
-
-          Two elements, div and span, have no semantic value. They apply no
-          real meaning to content and are rather generic container elements
-          used as a convenient way to attach information to the text within the
-          tags (for example linking the content to a CSS id or class). I would
-          suspect that since div and span do very little in regards to HTML's
-          job of assigning deeper meaning to the text that surfaces on a webpage,
-          if another more exact and descriptive tag could be used, use it. Although
-          div and span are similar in their lack of specificity, they are quite
-          different ultimately in how they function&#8717;and this difference has
-          everything to do with how they display. The div tag is referred to as
-          a block element; the element fills the whole width of the screen, living
-          entirely on its own line (or lines). These generally hold a big chunk of
-          text. Span elements, on the other hand, are inline elements. They are
-          used to isolate a small section of text within a larger grouping.
+          Websites are made up of boxes&#8212;boxes filled with content.
+          Boxes are stacked on top of one another, side by side, and can
+          even be nested within other boxes. Getting this concept down will help
+          immensely as you start to manipulate these boxes through CSS to add
+          design to your site.
       </section>
 
       <section>
-        <h4>Section + Article Tags</h4>
-
-          With the advent of HTML5, a number of new tags have been introduced to
-          better assign meaning to the content on the page. Two new tags include
-          the article and section tags. What they denote and how they relate can
-          be a bit confusing. According to HTML Dog, "an article element can be
-          used to mark up a standalone section of content" while a section element
-          is "a more general section that could be used to split up an article."
-          So the article would be the big thing, a complete or self-contained
-          composition that may contain within it individual sections that, while
-          related, can be broken up accordingly to better organize the whole.
+          <h4>The Box Model + Block and Inline Elements</h4>
+          At the most basic level there are two types of 'box' elements that fill
+          HTML pages: block and inline elements. Both contain content, but the
+          elements surface on the page differently. Block elements fill the whole
+          width the screen, regardless of how much content exists inside the
+          actual element. Block elements also generally begin on new lines. Inline
+          elements on the other hand generally do not begin on a new line and
+          only occupy as much space as needed by the content inside the element.
+          Let's look at some code to better clarify this point:
       </section>
+
+      <section class="code-example">
+          <code>
+            &lt;div style=&#34;background-color: #8aff00&#34;>This is a block element&lt;&#47div>
+          </code>
+
+          <div style="background-color: #8aff00">
+            This is a block element
+          </div><br/>
+
+          <code>
+            &lt;div style=&#34;background-color: #8aff00&#34;>Here is one block element&lt;&#47div><br/>
+            &lt;div style=&#34;background-color: #444; color: #8aff00&#34;>And here is another with much more text inside it&lt;&#47div>
+          </code>
+
+          <div style="background-color: #8aff00">
+            Here is one block element
+          </div>
+          <div style="background-color: #444; color: #8aff00">
+            And here is another with much more text inside it
+          </div><br/>
+
+          <code>
+              &lt;span style=&#34;background-color: #444; color: #ffffff&#34;>And this is an inline element&lt;&#47span>
+          </code><br/>
+
+
+          <span style="background-color: #444; color: #ffffff">
+            This is an inline element
+          </span><br/><br/>
+
+          <code>
+              &lt;span style=&#34;background-color: #444; color: #ffffff&#34;>Here are two span elements&lt;&#47span><br/>
+              &lt;span style=&#34;background-color: #919191; color: #ffffff&#34;>Side by side&lt;&#47span>
+          </code><br/>
+
+
+          <span style="background-color: #444; color: #ffffff">
+            Here are two span elements
+          </span>
+          <span style="background-color: #919191; color: #ffffff">
+            Side by side
+          </span>
+          <br/><br/>
+
+          <code>
+            &lt;div style=&#34;background-color: #8aff00&#34;>And here is &lt;span style=&#34;background-color: #444; color: #ffffff&#34;>a span element&lt;&#47span>inside a block element&lt;&#47div>
+          </code>
+          <div style="background-color:#8aff00">
+            And here is
+            <span style="background-color: #444; color: #ffffff">an inline element</span>
+            inside a block element
+          </div>
+     </section>
+
+     <section>
+         The first two examples are of div elements, which are block
+         elements. No matter how much or how little text is inside the tags, the element
+         will take up the full width of the screen. (The background-color
+         shows the actual size of the element. Adjust the size of the browser to see
+         how the length of the div element changes.) Span elements, on the other hand,
+         are inline elements&#8212;their length is dictated by the content that
+         exists between the open and close tags.
+         Also, since inline elements do not begin a new line, two span elements
+         share the same line. The last example shows how an inline element can
+         be nested inside a block element. <em>(In the example above I used styling
+         in the HTML to help demonstrate the difference between the elements.
+         You should avoid including attributes directly in the HTML code and confine
+         all styling to the CSS.)</em>
+      </section>
+
+      <section>
+          While HTML elements all come with default value of block or inline, this initial
+          value can be overrided through the CSS by using the display property. (I'll discuss
+          this in more detail in my next post.)
+      </section>
+
+      <section>
+        <h4>A Side Note: On Choosing Block and Inline Elements...</h4>
+          While divs and spans nicely illustrate the HTML box model, it's worth noting
+          that they are not ideal elements to use when trying to convey meaning in your
+          HTML document. Neither divs nor spans hold any semantic value. Rather, they are generic
+          container elements used as a way to attach information (CSS design) to
+          the contents within. If another tag can be used that better describes
+          your content, use it. This isn't to say that divs and spans aren't valuable.
+          Afterall, it's just as bad to assign false meaning to your content than it is
+          to fail to assign any. Div and span tags are ideal for those instances when
+          tags that hold more semantic weight just don't make sense for your content.
   </article>

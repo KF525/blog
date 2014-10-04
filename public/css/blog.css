@@ -10,6 +10,7 @@ section {
   line-height: 1.4em;
   display: block;
   width: 100%;
+  margin: .75em 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -207,8 +208,26 @@ td {
   line-height: 1.3em;
 }
 
+.code-example {
+  font-size: .75em;
+  font-family: "Cousine";
+  background-color: #e1e0e0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em 0;
+}
+
 .hide {
   display:none;
+}
+
+/*FAVORITES PAGE*/
+
+.favorite-things {
+  font-size: .75em;
+  line-height: 1.5em;
+  list-style: circle;
+  margin: 2em;
 }
 
 /* MEDIA QUERIES BEGIN HERE*/

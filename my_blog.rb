@@ -16,6 +16,10 @@ class MyBlog < Sinatra::Base
     erb :aboutme
   end
 
+  get "/favoritethings" do
+    erb :favoritethings
+  end
+
   get "/bloglanding" do
     @current_page = :blog
     @all_posts = Post.all.size
