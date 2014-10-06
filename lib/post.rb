@@ -17,13 +17,16 @@ class Post
     end
   end
 
+  def contents
+    open("views/#{self.url}.erb").read
+  end
+
   def update_post
-    file_content = open("views#{self.url}.erb").read
-    line = /"post_excerpt"/ =~ file_content
+    line = /"post_excerpt"/ =~ contents
 
     self.date = Date.parse(self.date)
     self.title = self.title.gsub!("_", " ")
-    self.excerpt = file_content[(line.to_i + 15), 125]
+    self.excerpt = contents[(line.to_i + 15), 125]
   end
 
   def self.update_posts
@@ -68,14 +71,6 @@ class Post
   end
 
   def self.search(search_term)
-    search = all.find_all {|post| open("views/#{post.url}.erb").read.include?(search_term)}
-
-    if search.length == 0
-      "No matches. Sorry!" # no search results
-    else
-      #list matches
-    end
-    # @search_posts = Post.search(@search_term)
-    # search_term = to input
+    update_posts.find_all {|post| post.contents.downcase.include?(search_term.downcase)}
   end
 end

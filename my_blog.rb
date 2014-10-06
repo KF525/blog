@@ -28,6 +28,16 @@ class MyBlog < Sinatra::Base
     erb :bloglanding
   end
 
+  get "/search" do
+    erb :search
+  end
+
+  post "/search" do
+    @search_term = params[:search]
+    @results = Post.search(@search_term)
+    erb :search
+  end
+
   get "/posts/:date/:post" do
     @current_index = Post.find_current_index("/posts/#{params[:date]}/#{params[:post]}")
     @current_page = :blog

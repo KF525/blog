@@ -3,7 +3,7 @@
 <%=yield%>
 
 <ul class="horizontal-list blog_footer">
-  <li class="byline">by <a href="/aboutme">Kate Fulton</a></li>
+  <li class="byline"><a href="/aboutme">Kate Fulton</a></li>
   <li class="lastnextblog"><span class="<%="disabled" if @current_index == 0 %>"><a href="<%= Post.last_blog %>">Last Post</a></span> |
     <span class="<%="disabled" if @current_index == (Post.all.length - 1) %>"><a href="<%= Post.next_blog %>">Next Post</a></span></li>
 </ul>
