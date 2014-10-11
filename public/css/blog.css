@@ -156,6 +156,13 @@ a:active {
    border-bottom: 0;
 }
 
+.sad-robot {
+  width: 60%;
+  max-width: 300px;
+  background: transparent;
+  margin: 0 0 0 0;
+}
+
 /* CSS for blog entries begins here */
 
 blockquote {
@@ -270,7 +277,7 @@ td {
   display:none;
 }
 
-/*FAVORITES PAGE*/
+/*Favorites*/
 
 .favorite-things {
   font-size: .75em;

@@ -1,10 +1,19 @@
 <h4>Search Results</h4>
 
 <section>
-  <% @results.each do |post| %>
-    <a href="<%= post.url %>"><%= post.title%></a><br/>
-    <%= post.excerpt %>... <a href="<%= post.url %>">More</a><br/><br/>
+  <% if @results.length >= 1 %>
+    <% @results.each do |post| %>
+      <a href="<%= post.url %>"><%= post.title%></a><br/>
+      <%= post.excerpt %>...<br/><br/>
     <% end %>
-</section>
+    <a href="/bloglanding" class="btn">Clear Search</a>
+  <% else %>
+    <%= "Bummer. There are no results for '#{@search_term.upcase}'." %>
+    <a href="/bloglanding" class="btn">Back to Blog</a>
+    <section class="sad-robot"><img src="/images/sad-robot.png"></section>
+  <% end %>
+<!--if defined -->
+<!--image src code as string?? -->
+<!--@noresults-->
 
-<a href="/bloglanding" class="btn">Clear Results</a>
+</section>
